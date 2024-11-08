@@ -40,20 +40,8 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             v => (EWorkTypes)Enum.Parse(typeof(EWorkTypes), v));
         
         builder.Entity<WorkOrder>().HasKey(w => w.Id);
-        builder.Entity<WorkOrder>().Property(w => w.Id).IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<WorkOrder>().Property(w => w.MedicalEquipmentId)
-            .IsRequired()
-            .HasConversion(medicalEquipmentIdConverter);
-        builder.Entity<WorkOrder>().Property(w => w.StaffId)
-            .IsRequired()
-            .HasConversion(staffIdConverter);
-        builder.Entity<WorkOrder>().Property(w => w.HealthInstitutionId)
-            .IsRequired()
-            .HasConversion(healthInstitutionIdConverter);
-        builder.Entity<WorkOrder>().Property(w => w.Type)
-            .IsRequired()
-            .HasConversion(workTypeConverter);
-        builder.Entity<WorkOrder>().Property(w => w.Type).IsRequired();
+        builder.Entity<WorkOrder>().Property(w => w.Id).IsRequired().ValueGeneratedOnAdd(); 
+        
         builder.Entity<WorkOrder>().Property(w => w.Description).HasMaxLength(240);
         builder.Entity<WorkOrder>().Property(w => w.Priority).IsRequired();
         builder.Entity<WorkOrder>().Property(w => w.Amount).IsRequired();

@@ -25,7 +25,7 @@ public class WorkOrderCommandService(
             throw new InvalidOperationException("The priority value should be between 1 and 3.");
         }
         
-        
+        /*
         if ( await workOrderRepository.WorkOrderExistsByMedicalEquipmentIdAndStaffIdAndPlannedAtAsync(
             new MedicalEquipmentId(command.MedicalEquipmentId),
             new StaffId(command.StaffId),
@@ -33,7 +33,7 @@ public class WorkOrderCommandService(
         ))
         {
             throw new InvalidOperationException("The work order already exists for the medical equipment, staff and planned date.");
-        }
+        }*/
         
         var workOrder = new WorkOrder(command);
         
