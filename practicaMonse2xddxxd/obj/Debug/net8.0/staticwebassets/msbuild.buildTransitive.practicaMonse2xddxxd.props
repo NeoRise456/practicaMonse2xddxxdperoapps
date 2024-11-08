@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\practicaMonse2xddxxd.props" />
+</Project>
